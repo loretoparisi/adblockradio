@@ -1,0 +1,40 @@
+{
+  "name": "adblockradio",
+  "version": "1.0.0",
+  "description": "Distinguish ads, talk and music in radios",
+  "main": "post-processing.js",
+  "scripts": {
+    "test": "mocha --delay test/file.js && mocha --delay test/file.js --mljs && mocha --delay test/online.js && mocha --delay test/online.js --mljs && mocha --delay test/offline.js && mocha --delay test/offline.js --mljs"
+  },
+  "keywords": [
+    "adblock",
+    "radio",
+    "commercials",
+    "broadcast"
+  ],
+  "author": "Alexandre Storelli <a_npm@storelli.fr>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^0.3.2",
+    "abr-log": "^1.0.3",
+    "async": "^2.6.3",
+    "axios": "^0.18.1",
+    "dsp.js": "git+https://git@github.com/corbanbrook/dsp.js.git",
+    "fs-extra": "^7.0.1",
+    "mfcc": "git+https://git@github.com/adblockradio/node-mfcc.git",
+    "sqlite3": "^4.1.0",
+    "stream-audio-fingerprint": "^1.0.4",
+    "stream-tireless-baler": "^1.0.19",
+    "tar": "^4.4.13",
+    "zeromq": "^5.1.0",
+    "zerorpc": "^0.9.8"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.543.0",
+    "electron-builder": "^20.44.4",
+    "electron-prebuilt": "^1.4.13",
+    "electron-rebuild": "^1.8.6",
+    "mocha": "^6.2.1",
+    "wtfnode": "^0.8.0"
+  }
+}

@@ -4,7 +4,7 @@
 # Copyright (c) 2021 Loreto Parisi (loretoparisi at gmail dot com)
 #
 
-FROM python:3.7.4-slim-buster
+FROM python:2.7-slim-buster
 
 LABEL maintainer Loreto Parisi loretoparisi@gmail.com
 

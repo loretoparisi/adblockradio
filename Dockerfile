@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     npm \
     curl && \
+    python-dev && \
+    portaudio19-dev && \
     add-apt-repository ppa:jonathonf/ffmpeg-4 && \
     apt-get install -y ffmpeg
 
@@ -30,6 +32,9 @@ RUN apt-get update && apt-get install -y \
 RUN npm install npm@latest -g && \
     npm install n -g && \
     n 9.11.2
+
+# python dependencies
+RUN pip install -r requirements.txt
 
 # install app
 RUN npm install -g node-gyp && \

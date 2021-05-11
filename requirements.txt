@@ -1,0 +1,9 @@
+numpy
+keras==2.0.8
+tensorflow==1.15.0
+python_speech_features
+h5py
+scipy
+zerorpc
+sounddevice
+psutil

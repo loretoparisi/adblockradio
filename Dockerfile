@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     libsndfile1-dev \
     sqlite3 \
+    git \
     tar \
     gzip \
     ca-certificates \
@@ -25,11 +26,13 @@ RUN apt-get update && apt-get install -y \
     add-apt-repository ppa:jonathonf/ffmpeg-4 && \
     apt-get install -y ffmpeg
 
-# install nodejs LTS
-RUN npm install n -g \
-    n lts
+# update npm, install nodejs version
+RUN npm install npm@latest -g && \
+    npm install n -g && \
+    n 9.11.2
 
 # install app
-RUN npm install
+RUN npm install -g node-gyp && \
+    npm install
 
 CMD ["bash"]

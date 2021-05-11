@@ -3,8 +3,10 @@
 ## Docker
 
 ```
+git clone https://github.com/loretoparisi/adblockradio
+cd adblockradio
 docker build -f Dockerfile -t adblockradio .
-docker run --rm -it adblockradio bash
+docker run --rm -it -v $(pwd):/app adblockradio bash
 ```
 
 ![Adblock Radio](https://www.adblockradio.com/assets/img/abr_buddha_v3_175.png)

@@ -13,7 +13,6 @@ const FILE = process.argv[2] || "podcasts/example.mp3";
 log.info("FILE=" + FILE);
 
 const t1 = new Date();
-
 const abr = new Analyser({
 	country: "Italy",
 	name: "Radio 24",
@@ -22,7 +21,8 @@ const abr = new Analyser({
 		predInterval: 1,
 		enablePredictorHotlist: true,
 		enablePredictorMl: true,
-		saveMetadata: true,
+		saveAudio: false,
+		saveMetadata: false,
 		verbose: false,
 	}
 });

@@ -7,8 +7,8 @@
 const { log } = require("abr-log")("demo");
 const { Analyser } = require("./post-processing.js");
 
-const country = "Finland";
-const name = "Basso Radio";
+const country = "Italy";
+const name = "Radio 24";
 
 log.info("start analyser!");
 
@@ -20,8 +20,8 @@ const abr = new Analyser({
 		saveDuration: 10,
 		enablePredictorHotlist: true,
 		enablePredictorMl: true,
-		saveAudio: true,
-		saveMetadata: true,
+		saveAudio: false,
+		saveMetadata: false,
 		fetchMetadata: true,
 		verbose: true,
 	}

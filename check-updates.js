@@ -39,7 +39,6 @@ const update = async function(remoteFile, localFile, options) { //localPath, rem
 	try {
 		const localFileSplit = localFile.split('/');
 		const localPath = localFileSplit.slice(0, localFileSplit.length - 1).join('/');
-		//log.debug("localPath=" + localPath);
 		try {
 			await fs.mkdir(localPath, { recursive: true });
 		} catch (e) {
@@ -48,7 +47,8 @@ const update = async function(remoteFile, localFile, options) { //localPath, rem
 				throw e;
 			}
 		}
-		const checksumData = await axios.get(encodeURI(remoteFile + CHECKSUM_SUFFIX));
+		const checksumURI = remoteFile + CHECKSUM_SUFFIX;
+		const checksumData = await axios.get(encodeURI(checksumURI));
 		await fs.writeFile(localFile + CHECKSUM_SUFFIX, checksumData.data);
 		const data = await axios.get(encodeURI(remoteFile), { responseType: 'arraybuffer' });
 		await fs.writeFile(localFile, data.data);
@@ -69,9 +69,10 @@ exports.checkModelUpdates = async function(params) {
 
 	for (let i=0; i<params.files.length; i++) {
 		const modelFile = params.files[i].file;
+		const remoteModelFile = params.files[i].file.replace(/.model/g,'').replace(/\//g,'.');
 		const tared = !!params.files[i].tar;
 		const localFile = params.localPath + '/' + modelFile + (tared ? '.tar.gz' : '');
-		const remoteFile = MODELS_REPOSITORY + modelFile + (tared ? '.tar.gz' : '');
+		const remoteFile = MODELS_REPOSITORY + remoteModelFile + (tared ? '.tar.gz' : '');
 		if (await isToUpdate(localFile, remoteFile)) {
 			await update(remoteFile, localFile, { untar: tared });
 			if (params.files[i].callback) params.files[i].callback();

@@ -32,7 +32,7 @@ if (cluster.isMaster) {
 		log.error('analysis timed out or was too slow. kill it.');
 		timedOut = true;
 		cp.kill();
-		run();
+		//run();
 	}, TIMEOUT);
 
 	fs.unlink(FILE + '.json', function(err) {
@@ -74,7 +74,7 @@ if (cluster.isMaster) {
 				} catch (e) {
 					fileOutputIsSane = false;
 				}
-				run();
+				//run();
 			});
 		});
 	});

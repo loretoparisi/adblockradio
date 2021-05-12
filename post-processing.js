@@ -348,7 +348,7 @@ class Analyser extends Readable {
 		}
 
 		const defaultModelPath = process.cwd() + '/model';
-		const defaultHotlistFile = this.country + '_' + this.name + '/hotlist.sqlite';
+		const defaultHotlistFile = this.country + '_' + this.name + '/sqlite';//LP: was hotlist.sqlite'
 
 		// default module options
 		this.config = {

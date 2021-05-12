@@ -9,20 +9,20 @@ const { Analyser } = require("./post-processing.js");
 
 log.info("start analyser!");
 
-const FILE = process.argv[2] || "podcasts/example.mp3";
+const FILE = process.argv[2] || "podcasts/1000519087999.mp3";
 log.info("FILE=" + FILE);
 
 const t1 = new Date();
 const abr = new Analyser({
-	country: "Italy",
-	name: "Radio 24",
+	country: "United Kingdom",
+	name: "BBC Radio 1",
 	config: {
 		file: FILE,
 		predInterval: 1,
 		enablePredictorHotlist: true,
 		enablePredictorMl: true,
-		saveAudio: false,
-		saveMetadata: false,
+		saveAudio: true,
+		saveMetadata: true,
 		verbose: false,
 	}
 });

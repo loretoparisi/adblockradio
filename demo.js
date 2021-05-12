@@ -6,11 +6,22 @@
 
 const { log } = require("abr-log")("demo");
 const { Analyser } = require("./post-processing.js");
+const fs = require('fs');
 
-const country = "Italy";
-const name = "Radio 24";
+// LP: web radio latest list
+const webradiometadata = JSON.parse(fs.readFileSync('./webradio-metadata.js', 'utf8'));
 
-log.info("start analyser!");
+// LP: pick a random radio
+const randomElement = function(arr, shuffle) {
+	if (shuffle) arr = this.shuffle(arr);
+	return arr[Math.floor(Math.random() * arr.length)];
+};
+
+var radio = randomElement(webradiometadata);
+const country = radio.country;
+const name = radio.name;
+
+log.info(`start analyser for ${name}:${country}`);
 
 const abr = new Analyser({
 	country: country,

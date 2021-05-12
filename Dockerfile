@@ -10,8 +10,6 @@ LABEL maintainer Loreto Parisi loretoparisi@gmail.com
 
 WORKDIR app
 
-COPY . .
-
 # system-wide dependencies
 RUN apt-get update && apt-get install -y \
     software-properties-common \
@@ -23,9 +21,10 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     npm \
     curl && \
-    libportaudio2 && \
     add-apt-repository ppa:jonathonf/ffmpeg-4 && \
     apt-get install -y ffmpeg
+
+COPY . .
 
 # update npm, install nodejs version
 RUN npm install npm@latest -g && \
@@ -38,5 +37,10 @@ RUN pip install -r requirements.txt
 # install app
 RUN npm install -g node-gyp && \
     npm install
+
+# audio related dependencies
+RUN apt-get update && apt-get install -y \
+    libportaudio2 \
+    libasound-dev
 
 CMD ["bash"]

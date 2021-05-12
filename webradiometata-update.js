@@ -1,6 +1,6 @@
 'use strict';
 
-const webradiometadata = require("webradio-metadata")
+const webradiometadata = require("webradio-metadata");
 const fs = require('fs');
 webradiometadata.getAll(function(results) {
     const file = 'webradio-metadata.js'

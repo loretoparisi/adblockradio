@@ -1,0 +1,70 @@
+{
+  "_from": "webradio-metadata@^0.1.39",
+  "_id": "webradio-metadata@0.1.39",
+  "_inBundle": false,
+  "_integrity": "sha512-x2VHPaGM6JpYjLvGV57kFY4/WNwcSdpuV5Px39BbJsqTBAlLkSXAlL5jbOJCUARfDYKCqTCt2mpG0Pbovo/CZg==",
+  "_location": "/webradio-metadata",
+  "_phantomChildren": {
+    "side-channel": "1.0.4"
+  },
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "webradio-metadata@^0.1.39",
+    "name": "webradio-metadata",
+    "escapedName": "webradio-metadata",
+    "rawSpec": "^0.1.39",
+    "saveSpec": null,
+    "fetchSpec": "^0.1.39"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/webradio-metadata/-/webradio-metadata-0.1.39.tgz",
+  "_shasum": "7f746d98c623963c097d9ad62837acfff5a59399",
+  "_spec": "webradio-metadata@^0.1.39",
+  "_where": "/app",
+  "author": {
+    "name": "Alexandre Storelli"
+  },
+  "bugs": {
+    "url": "https://github.com/adblockradio/webradio-metadata/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "abr-log": "^1.0.2",
+    "axios": "^0.18.1",
+    "chalk": "^2.4.2",
+    "loglevel": "^1.6.3",
+    "loglevel-plugin-prefix": "^0.8.3",
+    "qs": "^6.7.0",
+    "winston": "^3.2.1",
+    "ws": "^5.2.1",
+    "xml2js": "^0.4.19"
+  },
+  "deprecated": false,
+  "description": "API scraping recipes to get metadata of radio streams",
+  "devDependencies": {
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  },
+  "homepage": "https://github.com/adblockradio/webradio-metadata",
+  "keywords": [
+    "scraping",
+    "metadata",
+    "webradio"
+  ],
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "name": "webradio-metadata",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adblockradio/webradio-metadata.git"
+  },
+  "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack.js && cd build && tar -czvf webradio-metadata.js.tar.gz webradio-metadata.js && sha256sum webradio-metadata.js.tar.gz > webradio-metadata.js.tar.gz.sha256sum",
+    "test": "node index.js test"
+  },
+  "version": "0.1.39"
+}

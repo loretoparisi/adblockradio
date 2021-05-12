@@ -5,7 +5,8 @@ const tar = require('tar');
 const fs = require('fs-extra');
 const { log } = require('abr-log')('checkModelUpdates');
 const assert = require('assert');
-
+const webradiometadata = require("webradio-metadata")
+	
 const MODELS_REPOSITORY = 'https://www.adblockradio.com/models/';
 const METADATA_REPOSITORY = 'https://www.adblockradio.com/metadata/';
 const CHECKSUM_SUFFIX = '.sha256sum';
@@ -80,11 +81,25 @@ exports.checkModelUpdates = async function(params) {
 
 exports.checkMetadataUpdates = async function(updateCallback) {
 	log.debug("check meta updates");
-	const file = 'webradio-metadata.js.tar.gz';
+	
+	const file = 'webradio-metadata.js'
+	const localFile = process.cwd() + '/' + file;
+	if (fs.existsSync(localFile)) {
+		if (updateCallback) updateCallback();
+	} else {
+		webradiometadata.getAll(function(results) {
+			
+
+			fs.writeFileSync(localFile, JSON.stringify(results, null, 2));
+			if (updateCallback) updateCallback();
+		});
+	}
+
+	/*const file = 'webradio-metadata.js.tar.gz';
 	const localFile = process.cwd() + '/' + file;
 	const remoteFile = METADATA_REPOSITORY + '/' + file;
 	if (await isToUpdate(localFile, remoteFile)) {
 		await update(remoteFile, localFile, { untar: true });
 		if (updateCallback) updateCallback();
-	}
+	}*/
 }

@@ -15,8 +15,8 @@ log.info("FILE=" + FILE);
 const t1 = new Date();
 
 const abr = new Analyser({
-	country: "France",
-	name: "RTL",
+	country: "Italy",
+	name: "Radio 24",
 	config: {
 		file: FILE,
 		predInterval: 1,

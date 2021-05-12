@@ -5,6 +5,7 @@ const { Analyser } = require("../post-processing.js");
 const fs = require("fs-extra");
 const assert = require("assert");
 const cluster = require("cluster");
+const describe = require("describe");
 
 const TEST_ML = true;
 const TEST_HOTLIST = true;
@@ -199,8 +200,8 @@ if (cluster.isMaster) {
 } else {
 
 	const abr = new Analyser({
-		country: 'France',
-		name: 'RTL',
+		country: 'Italy',
+		name: 'Radio 24',
 		config: {
 			predInterval: PRED_INTERVAL,
 			saveDuration: 10,

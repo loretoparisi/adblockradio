@@ -19,6 +19,7 @@
     "abr-log": "^1.0.3",
     "async": "^2.6.3",
     "axios": "^0.18.1",
+    "describe": "^1.2.0",
     "dsp.js": "git+https://git@github.com/corbanbrook/dsp.js.git",
     "fs-extra": "^7.0.1",
     "mfcc": "git+https://git@github.com/adblockradio/node-mfcc.git",
@@ -26,6 +27,7 @@
     "stream-audio-fingerprint": "^1.0.4",
     "stream-tireless-baler": "^1.0.19",
     "tar": "^4.4.13",
+    "webradio-metadata": "^0.1.39",
     "zeromq": "^5.1.0",
     "zerorpc": "^0.9.8"
   },

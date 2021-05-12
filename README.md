@@ -185,8 +185,8 @@ Below is a simple usage example. More thorough usage examples are available in t
 const { Analyser } = require("adblockradio");
 
 const abr = new Analyser({
-	country: "France",
-	name: "RTL",
+	country: "Italy",
+	name: "Radio 24",
 	config: {
 		...
 	}

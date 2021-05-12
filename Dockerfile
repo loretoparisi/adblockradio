@@ -23,8 +23,7 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     npm \
     curl && \
-    python-dev && \
-    portaudio19-dev && \
+    libportaudio2 && \
     add-apt-repository ppa:jonathonf/ffmpeg-4 && \
     apt-get install -y ffmpeg
 

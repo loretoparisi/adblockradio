@@ -3,7 +3,7 @@ const { Analyser } = require("../post-processing.js");
 const fs = require("fs-extra");
 const assert = require("assert");
 const cluster = require("cluster");
-
+const describe = require("describe");
 const FILE = __dirname + '/file.mp3';
 const TEST_ML = true;
 const TEST_HOTLIST = true;
@@ -181,8 +181,8 @@ if (cluster.isMaster) {
 	const t1 = new Date();
 
 	const abr = new Analyser({
-		country: "France",
-		name: "RTL",
+		country: "Italy",
+		name: "Radio 24",
 		config: {
 			file: FILE,
 			predInterval: PRED_INTERVAL,

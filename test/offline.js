@@ -5,10 +5,11 @@ const { Analyser } = require("../post-processing.js");
 const fs = require("fs-extra");
 const assert = require("assert");
 const cluster = require("cluster");
+const describe = require("describe");
 
 const PRED_INTERVAL = 1; // in seconds
-const COUNTRY = "France";
-const NAME = "RTL";
+const COUNTRY = "Italy";
+const NAME = "Radio 24";
 
 const MLJS = process.argv.includes('--mljs');
 
